@@ -7,12 +7,21 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-let reservation  = [
+const reservation  = [
     {
         name: "John Doe",
         phoneNumber: "9195555555",
         email:"test@test.com",
         id:"1"
+    }
+]
+
+const waitlist = [
+    {
+        name: "Jane Smith",
+        phoneNumber: "9196666666",
+        email:"wait@wait.com",
+        id:"2"
     }
 ]
 

@@ -75,15 +75,15 @@
   
     function runTableQuery() {
       // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: "/api/tables", method: "GET" })
-        .then(function(tableData) {
+      $.ajax({ url: "/api/reservation", method: "GET" })
+        .then(function(reservationData) {
   
           // Here we then log the tableData to console, where it will show up as an object.
-          console.log(tableData);
+          console.log(reservationData);
           console.log("------------------------------------");
   
           // Loop through and display each of the customers
-          for (var i = 0; i < tableData.length; i++) {
+          for (var i = 0; i < reservationData.length; i++) {
   
             // Get a reference to the tableList element and populate it with tables
             var tableList = $("#tableList");
@@ -94,10 +94,11 @@
             listItem.append(
               $("<h2>").text("Table #" + (i + 1)),
               $("<hr>"),
-              $("<h2>").text("ID: " + tableData[i].id),
-              $("<h2>").text("Name: " + tableData[i].name),
-              $("<h2>").text("Email: " + tableData[i].email),
-              $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+              $("<h2>").text("ID: " + reservationData[i].id),
+              $("<h2>").text("Name: " + reservationData[i].name),
+              $("<h2>").text("Email: " + reservationData[i].email),
+              $("<h2>").text("Phone: " + reservationData[i].phoneNumber)
+
             );
   
             tableList.append(listItem);
@@ -109,14 +110,14 @@
   
       // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
       $.ajax({ url: "/api/waitlist", method: "GET" })
-        .then(function(waitData) {
+        .then(function(waitlistData) {
   
           // Here we then log the waitlistData to console, where it will show up as an object.
-          console.log(waitData);
+          console.log(waitlistData);
           console.log("------------------------------------");
   
           // Loop through and display each of the customers
-          for (var i = 0; i < waitData.length; i++) {
+          for (var i = 0; i < waitlistData.length; i++) {
   
             // Get a reference to the waitList element and populate it with tables
             var waitList = $("#waitList");
@@ -127,10 +128,10 @@
             listItem.append(
               $("<h2>").text("Table #" + (i + 1)),
               $("<hr>"),
-              $("<h2>").text("ID: " + waitData[i].customerID),
-              $("<h2>").text("Name: " + waitData[i].customerName),
-              $("<h2>").text("Email: " + waitData[i].customerEmail),
-              $("<h2>").text("Phone: " + waitData[i].phoneNumber)
+              $("<h2>").text("ID: " + waitlistData[i].id),
+              $("<h2>").text("Name: " + waitlistData[i].name),
+              $("<h2>").text("Email: " + waitlistData[i].email),
+              $("<h2>").text("Phone: " + waitlistData[i].phoneNumber)
             );
   
             waitList.append(listItem);
