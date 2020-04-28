@@ -42,7 +42,7 @@ app.get("/reserve", function(req, res) {
 app.get("/api/reservation", function(req, res) {
     return res.json(reservation);
 });
-
+ 
 // Displays JSON of waitlist
 app.get("/api/waitlist", function(req, res) {
     return res.json(waitlist);
