@@ -2,7 +2,7 @@ var express = require("express");
 var path = require("path");
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,9 +20,9 @@ const waitlist = [
     {
         name: "Jane Smith",
         phoneNumber: "9196666666",
-        email: "wait@wait.com",
-        id: "2"
-    }
+        email:"wait@wait.com",
+        id:"2"
+    } 
 ]
 
 app.get("/", function (req, res) {
