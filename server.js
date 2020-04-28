@@ -29,6 +29,10 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
 
+app.get("/reserve", function(req, res){
+    res.sendFile(path.join(__dirname, "reserve.html"));
+})
+
 // Displays JSON of reservations
 app.get("/api/reservation", function(req, res) {
     return res.json(reservation);
@@ -42,7 +46,8 @@ app.get("/api/waitlist", function(req, res) {
 //Creates a new reservation
 app.post("/api/reservation", (req, res) => {
 
-    const newReservation = req.body;
+    let newReservation = req.body;
+    console.log("req.body", req.body)
 
     console.log(newReservation);
 
