@@ -29,6 +29,14 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
 
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+app.get("/waitlist", function(req, res) {
+    res.sendFile(path.join(__dirname, "waitingList.html"));
+});
+
 // Displays JSON of reservations
 app.get("/api/reservation", function(req, res) {
     return res.json(reservation);
