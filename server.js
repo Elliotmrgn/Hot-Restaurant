@@ -26,10 +26,37 @@ const waitlist = [
 ]
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
+<<<<<<< HEAD
+});
+
+// Displays JSON of reservations
+app.get("/api/reservation", function(req, res) {
+    return res.json(reservation);
+});
+
+// Displays JSON of waitlist
+app.get("/api/waitlist", function(req, res) {
+    return res.json(waitlist);
+});
+
+//Creates a new reservation
+app.post("/api/reservation", (req, res) => {
+
+    const newReservation = req.body;
+
+    console.log(newReservation);
+
+    reservation.push(newReservation);
+
+    res.json(newReservation);
+
+});
+=======
   });
+>>>>>>> ac6335508078b898b8dbe822405510a1315dc1da
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
     console.log("http://localhost:" + PORT);
-  });
+});
