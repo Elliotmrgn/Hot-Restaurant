@@ -80,11 +80,12 @@
   <script type="text/javascript">
     $("#submit-btn").on("click", function (event) {
       event.preventDefault();
+      console.log("alert")
       let newReservation = {
-        name: $("reserve-name").val().trim(),
-        phoneNumber: $("reserve-phone").val().trim(),
-        email: $("reserve-email").val().trim(),
-        id: $("reserve-unique-id").val().trim()
+        name: $("#reserve-name").val(),
+        phoneNumber: $("#reserve-phone").val(),
+        email: $("#reserve-email").val(),
+        id: $("#reserve-unique-id").val()
       };
       $.post("/api/reservation", newReservation)
         .then(function (data) {
